@@ -62,7 +62,7 @@ handlers:
   - com.networknt.specification.SpecSwaggerUIHandler@swaggerui
   # - com.networknt.metrics.prometheus.PrometheusGetHandler@getprometheus
   # Business Handlers
-  - com.networknt.ob.handler.TransactionsAccountsAccountIdGetHandler
+  - com.networknt.ob.handler.TransactionsAccountIdGetHandler
   - com.networknt.ob.handler.TransactionsGetHandler
 
 
@@ -81,11 +81,11 @@ chains:
     - validator
 
 paths:
-  - path: '/transactions/accounts/{AccountId}'
+  - path: '/transactions/{AccountId}'
     method: 'GET'
     exec:
       - default
-      - com.networknt.ob.handler.TransactionsAccountsAccountIdGetHandler
+      - com.networknt.ob.handler.TransactionsAccountIdGetHandler
   - path: '/transactions'
     method: 'GET'
     exec:
