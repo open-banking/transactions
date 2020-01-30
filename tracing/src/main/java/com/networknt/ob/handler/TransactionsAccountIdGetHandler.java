@@ -8,7 +8,7 @@ import io.undertow.util.HttpString;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TransactionsAccountsAccountIdGetHandler implements LightHttpHandler {
+public class TransactionsAccountIdGetHandler implements LightHttpHandler {
     
     @Override
     public void handleRequest(HttpServerExchange exchange) throws Exception {

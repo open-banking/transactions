@@ -54,18 +54,18 @@ public class TransactionsGetHandlerTest {
             throw new ClientException(e);
         }
         final AtomicReference<ClientResponse> reference = new AtomicReference<>();
-        String requestUri = "/transactions?fromBookingDateTime=okCNPW&toBookingDateTime=udnVJMZMmHXmo";
+        String requestUri = "/transactions?fromBookingDateTime=ETrYoohnMjyRMxkXylBMnjsvioc&toBookingDateTime=IfJuAVhRgaNVsZhs";
         String httpMethod = "get";
         try {
             ClientRequest request = new ClientRequest().setPath(requestUri).setMethod(Methods.GET);
             
             //customized header parameters 
-            request.getRequestHeaders().put(new HttpString("Authorization"), "lJAvbnvvmFmwsqZUdAtjALiEpG");
-            request.getRequestHeaders().put(new HttpString("x-customer-user-agent"), "CVNbggbqhNrJFMuwCOCb");
-            request.getRequestHeaders().put(new HttpString("x-fapi-interaction-id"), "wLYRpJ");
-            request.getRequestHeaders().put(new HttpString("x-fapi-customer-ip-address"), "wrrlrInEmXPTCgLo");
-            request.getRequestHeaders().put(new HttpString("x-fapi-financial-id"), "JlJYMiQpMiDJa");
-            request.getRequestHeaders().put(new HttpString("x-fapi-customer-last-logged-time"), "mpVibOa");
+            request.getRequestHeaders().put(new HttpString("Authorization"), "EVykaQWqiBcYPSOlgGiWc");
+            request.getRequestHeaders().put(new HttpString("x-customer-user-agent"), "ZweGqpEgf");
+            request.getRequestHeaders().put(new HttpString("x-fapi-interaction-id"), "oyAcJdrlyvzcgElGo");
+            request.getRequestHeaders().put(new HttpString("x-fapi-customer-ip-address"), "vVakpmoGWCUlLaVOkBMelAUPDjAU");
+            request.getRequestHeaders().put(new HttpString("x-fapi-financial-id"), "DbOZnBmfLDquiQrgVsOMcZH");
+            request.getRequestHeaders().put(new HttpString("x-fapi-customer-last-logged-time"), "DAeqUDZM");
             connection.sendRequest(request, client.createClientCallback(reference, latch));
             
             latch.await();
