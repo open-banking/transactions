@@ -30,11 +30,11 @@ import java.util.concurrent.atomic.AtomicReference;
 
 
 @Ignore
-public class TransactionsAccountsAccountIdGetHandlerTest {
+public class TransactionsAccountIdGetHandlerTest {
     @ClassRule
     public static TestServer server = TestServer.getInstance();
 
-    static final Logger logger = LoggerFactory.getLogger(TransactionsAccountsAccountIdGetHandlerTest.class);
+    static final Logger logger = LoggerFactory.getLogger(TransactionsAccountIdGetHandlerTest.class);
     static final boolean enableHttp2 = server.getServerConfig().isEnableHttp2();
     static final boolean enableHttps = server.getServerConfig().isEnableHttps();
     static final int httpPort = server.getServerConfig().getHttpPort();
@@ -43,7 +43,7 @@ public class TransactionsAccountsAccountIdGetHandlerTest {
     static final String JSON_MEDIA_TYPE = "application/json";
 
     @Test
-    public void testTransactionsAccountsAccountIdGetHandlerTest() throws ClientException {
+    public void testTransactionsAccountIdGetHandlerTest() throws ClientException {
 
         final Http2Client client = Http2Client.getInstance();
         final CountDownLatch latch = new CountDownLatch(1);
@@ -54,18 +54,18 @@ public class TransactionsAccountsAccountIdGetHandlerTest {
             throw new ClientException(e);
         }
         final AtomicReference<ClientResponse> reference = new AtomicReference<>();
-        String requestUri = "/transactions/accounts/WNItYxOmKhdKEuPBDPXYndDKEp?fromBookingDateTime=HqlHLDSD&toBookingDateTime=lKhTaNSJKe";
+        String requestUri = "/transactions/RtohkPMVghjHbbAuOBuQhrk?fromBookingDateTime=EryDsCtjMwBTYhaiePWIhOUsTRS&toBookingDateTime=UxbGiAZ";
         String httpMethod = "get";
         try {
             ClientRequest request = new ClientRequest().setPath(requestUri).setMethod(Methods.GET);
             
             //customized header parameters 
-            request.getRequestHeaders().put(new HttpString("Authorization"), "FFxaWmbCmkNMPIPdNeoFSrbuUsi");
-            request.getRequestHeaders().put(new HttpString("x-customer-user-agent"), "ndsqHYQqsSBtgh");
-            request.getRequestHeaders().put(new HttpString("x-fapi-interaction-id"), "hbmmTvsbIvL");
-            request.getRequestHeaders().put(new HttpString("x-fapi-customer-ip-address"), "FdsqiWeVVKTmFlKUIZsLfh");
-            request.getRequestHeaders().put(new HttpString("x-fapi-financial-id"), "UsbSyQ");
-            request.getRequestHeaders().put(new HttpString("x-fapi-customer-last-logged-time"), "BFtoFi");
+            request.getRequestHeaders().put(new HttpString("Authorization"), "RllJKSXouKcWOKsqNCPolsVnJvx");
+            request.getRequestHeaders().put(new HttpString("x-customer-user-agent"), "AjCLMYgdImCkyvQTVQ");
+            request.getRequestHeaders().put(new HttpString("x-fapi-interaction-id"), "VtYmj");
+            request.getRequestHeaders().put(new HttpString("x-fapi-customer-ip-address"), "hcxTDvKkyiwQ");
+            request.getRequestHeaders().put(new HttpString("x-fapi-financial-id"), "drFgblcdemRweNEFpE");
+            request.getRequestHeaders().put(new HttpString("x-fapi-customer-last-logged-time"), "uipbEmXipXKjALiOBYmQq");
             connection.sendRequest(request, client.createClientCallback(reference, latch));
             
             latch.await();
